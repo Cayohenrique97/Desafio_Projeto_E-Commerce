@@ -1,0 +1,55 @@
+#Criando DataBase
+/*create database if not exists first_example;
+use first_example;
+show tables */
+
+#Criando tabela na minha database
+/*CREATE table person(
+	person_id smallint unsigned,
+	fname varchar(20),
+	lname varchar(20),
+	gender enum( 'H', 'F'),
+	birth_date DATE,
+	street varchar(30),
+	city varchar(20),
+	state varchar(20),
+	country varchar(20),
+	postal_code varchar(20),
+    constraint pk_person primary key (person_id)
+); */
+
+# desc person; -> DESCRIÇÃO DA TABELA
+
+#Criando uma nova tabela com uma primary key composta por 2 chaves
+/*create table favorite_food(
+	person_id smallint unsigned,
+    food varchar(20),
+    constraint pk_favorite_food primary key (person_id, food),
+    constraint fk_favorite_food_person_id foreign key (person_id) references person(person_id)
+    ); */
+
+# desc favorite_food
+
+#Adicionando valor na tabela person
+/*insert into person 
+values 
+	('1','Carolina','Silva','F','1997-08-21','rua tal','Cidade J','RJ','Brasil','26054-89'),
+    ('2','Luiz','Silva','H','1997-08-21','rua tal','Cidade J','RJ','Brasil','26054-90'),
+    ('3','Marcio','Silva','H','1997-08-21','rua tal','Cidade J','RJ','Brasil','26054-91'),
+    ('4','Suelio','Silva','H','1997-08-21','rua tal','Cidade J','RJ','Brasil','26054-92'),
+    ('5','Suelio','Silva','H','1997-08-21','rua tal','Cidade J','RJ','Brasil','26054-93');*/
+
+#select * from person;
+
+#deletando valor na tabela person
+#delete from person where person_id =1 or person_id =5;
+
+#adicionando dados na tabela favorite_food
+/*insert into favorite_food
+	values
+	('2','lasanha'),
+    ('1','carne assada'),
+    (3, 'feccutine');
+*/
+    
+#select * from favorite_food;
